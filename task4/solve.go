@@ -1,11 +1,12 @@
-package task4
+package main
 
 import (
 	"strings"
 	"unicode"
 )
 
-func RemoveEven(slice []int) (ans []int) {
+func RemoveEven(slice []int) []int {
+	var ans []int
 	for i := range slice {
 		if slice[i] % 2 != 0 {
 			ans = append(ans, slice[i])
@@ -29,11 +30,14 @@ func DifferentWordsCount(text string) int {
 	lastIndex := -1
 	for idx, r := range runes {
 		if !unicode.IsLetter(r) {
-			if idx -lastIndex > 1 {
-				words[string(runes[lastIndex+ 1:idx])] = idx
+			if idx-lastIndex > 1 {
+				words[string(runes[lastIndex+1:idx])] = idx
 			}
 			lastIndex = idx
 		}
 	}
 	return len(words)
+}
+
+func main() {
 }
