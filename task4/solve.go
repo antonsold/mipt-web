@@ -38,6 +38,3 @@ func DifferentWordsCount(text string) int {
 	}
 	return len(words)
 }
-
-func main() {
-}
